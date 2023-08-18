@@ -57,11 +57,11 @@
 
             <div id="exam" class="collapse">
                  {% if user.is_authenticated %}
-                    <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="post">
+                    <form id="questionform" action="{% url 'onlinecourse:submit' course.id %}" method="POST">
                          {% for question in course.question_set.all %}
                         <div class="card mt-1">
                             <div class="card-header">
-                                <div class="card-header"><h5>{{ question.question_text}}</h5></div>
+                                <div class="card-header"><h5>{{ question.text}}</h5></div>
                                 {% csrf_token %}
                             </div>
                             <div class="form-group">
